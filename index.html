@@ -2,115 +2,134 @@
 <html lang="en">
 <meta content="width=device-width, initial-scale=1" name="viewport">
   <head>
-    <meta charset="UTF-8" />
-    <title>INTRO LEE HANEUL</title>
-    <style>
-      /* 기본 전체 높이 확보 및 여백 제거 */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-      }
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
 
-      /* 전체 콘텐츠를 감싸는 wrapper - footer 공간 확보 포함 */
-      .wrapper {
-        min-height: 100%;
-        padding: 15px 400px 60px 400px;
-        box-sizing: border-box;
-      }
+/* 전체 콘텐츠를 감싸는 wrapper - footer 공간 확보 포함 */
+.wrapper {
+  min-height: 100%;
+  padding: 15px 400px 60px 400px;
+  box-sizing: border-box;
+}
 
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-      header a {
-        color: black;
-        text-decoration: none;
-      }
+header a {
+  color: black;
+  text-decoration: none;
+}
 
-      h1 {
-        font-size: 24px;
-        font-weight: bold;
-      }
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
 
-      nav a {
-        margin-left: 20px;
-        text-decoration: none;
-        color: gray;
-        font-weight: bold;
-      }
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+}
 
-      nav a.active {
-        color: black;
-      }
+nav a.active {
+  color: black;
+}
 
-      .container {
-        display: flex;
-        margin-top: 100px;
-      }
+.container {
+  display: flex;
+  margin-top: 100px;
+}
 
+.container img {
+  width: 300px;
+  height: auto;
+  margin-right: 30px;
+}
 
-      .container img {
-        width: 300px;
-        height: auto;
-        margin-right: 30px;
-      }
+footer {
+  position: relative;
+  height: 60px;
+  margin-top: -60px;
+  width: 100%;
+  background-color: #fcfcfc;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
 
-      footer {
-        position: relative;
-        height: 60px;
-        margin-top: -60px;
-        width: 100%;
-        background-color: #fcfcfc;
-        border-top: 1px solid #e0e0e0;
-        text-align: center;
-        font-size: 14px;
-        color: #666;
-        padding-top: 16px;
-        padding-bottom: 16px;
-      }
+.filter-buttons {
+  display: inline-flex;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
 
-      .filter-buttons {
-        display: inline-flex;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        overflow: hidden;
-        margin-bottom: 10px;
-      }
+.filter-btn {
+  border: none;
+  background: white;
+  color: red;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
 
-      .filter-btn {
-        border: none;
-        background: white;
-        color: red;
-        padding: 8px 12px;
-        cursor: pointer;
-        font-weight: bold;
-      }
+.filter-btn.active {
+  background: red;
+  color: white;
+}
 
-      .filter-btn.active {
-        background: red;
-        color: white;
-      }
+.item {
+  margin: 8px 0;
+}
 
-      .item {
-        margin: 8px 0;
-      }
+#hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
 
-      #hamburger {
-        display: none;
-        font-size: 24px;
-        cursor: pointer;
-      }
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 15px 20px 60px 20px;
+  }
 
-      @media screen and (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #f9f9f9;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    z-index: 100;
+  }
 
-         .container {
-    flex-direction: column;   /* 세로 정렬 */
-    align-items: center;      /* 가운데 정렬 */
+  nav a {
+    margin: 10px 0;
+  }
+
+  #hamburger {
+    display: block;
+  }
+
+  /* 모바일에서 이미지 위, 텍스트 아래 정렬 */
+  .container {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
@@ -119,80 +138,57 @@
     margin-bottom: 20px;
     width: 100%;
     max-width: 300px;
+    height: auto;
   }
 
   .container > div {
     width: 100%;
   }
 }
-        .wrapper {
-          padding: 15px 20px 60px 20px;
-        }
 
-        nav {
-          display: none;
-          flex-direction: column;
-          background: #f9f9f9;
-          position: absolute;
-          top: 60px;
-          right: 20px;
-          padding: 10px;
-          border: 1px solid #ddd;
-          z-index: 100;
-        }
+.rainbow-text {
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
 
-        nav a {
-          margin: 10px 0;
-        }
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
 
-        #hamburger {
-          display: block;
-        }
-      }
+.photo-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
 
-      .rainbow-text {
-        background: linear-gradient(
-          to right,
-          red,
-          orange,
-          yellow,
-          green,
-          blue,
-          indigo,
-          violet
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: bold;
-      }
+.photo-item img:hover {
+  transform: scale(1.03);
+}
 
-      .photo-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-      }
+.beige-link {
+  color: #C9ADA7;
+  text-decoration: none;
+}
 
-      .photo-item img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-      }
-
-      .photo-item img:hover {
-        transform: scale(1.03);
-      }
-
-      .beige-link {
-      color: #C9ADA7;
-      text-decoration: none;
-      }
-
-     .beige-link:hover {
-      text-decoration: underline;
-     }
+.beige-link:hover {
+  text-decoration: underline;
+}
     </style>
   </head>
 
